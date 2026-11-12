@@ -7,4 +7,5 @@
 - Course is viewed as a published Artifact (index.html as the page, lessons/reference/assets as files). Republish it after each new lesson.
 - `reference/timeline.html` ("The Full Arc") is the mission's reference doc: fill in one era per lesson.
 - Sourcing: in-game text (narration, dialogue, item descriptions) is the primary source. Wikis are transcriptions plus fan interpretation; label interpretation as such.
-- Glossary: create `GLOSSARY.md` once the user shows they can use terms (Lord Soul, Disparity, Darksign…) correctly.
+- Glossary lives at `reference/glossary.html` (HTML so it ships in the course Artifact). Add a term only after the user uses it correctly in a quiz.
+- Lessons label each claim as **text** (in-game wording) or **reading** (interpretation built from clues); speakers with an agenda (Kaathe, Frampt) are flagged as testimony.

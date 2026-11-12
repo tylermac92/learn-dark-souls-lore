@@ -8,6 +8,8 @@
   Full transcription of the DS1 opening narration plus location/character lore and item text. Use for: checking exact in-game wording. Treat its interpretations as fan theory.
 - [Fextralife Dark Souls 2 Wiki: Lore](https://darksouls2.wiki.fextralife.com/lore) and the Dark Souls 3 Fextralife wiki
   Same role for DS2 and DS3.
+- [Dark Souls wikidot](https://darksouls.wikidot.com/)
+  Older wiki with clean item and dialogue transcriptions (e.g. Humanity, Kaathe). Read-only now, but text is reliable. Use for: verbatim DS1 text.
 - [Dark Souls Fandom Wiki](https://darksouls.fandom.com/wiki/The_First_Flame)
   Character and concept pages that cite item text. Some pages carry "lacks sources" warnings: verify claims against quoted text.
 - [Walantus, "Dark Souls" narrative review, GDC 2017](https://media.gdcvault.com/gdc2017/GameNarrativeReview/Calvin_Walantus_UCSC_GDC_Narrative.pdf)
