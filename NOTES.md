@@ -1,6 +1,6 @@
 # Notes
 
-- Prefers short (~10 min) lessons with a quiz each time.
+- Prefers short (~10 min) lessons with a quiz each time. Asked for harder quizzes after Lesson 4 (see LR 0005): interleaved warm-ups, "who said it?", select-all, synthesis recall.
 - Open each lesson with a warm-up that re-tests material from earlier lessons (spacing); prioritise anything missed.
 - No spoiler concerns, DLC included.
 - Has played all three games: can lean on in-game memories (places, bosses) as anchors.

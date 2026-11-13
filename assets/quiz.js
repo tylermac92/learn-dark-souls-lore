@@ -5,6 +5,7 @@
 //   { "type": "choice", "q": "...", "options": ["...", ...], "answer": 0, "why": "..." }   answer = index in options
 //   { "type": "order",  "q": "...", "items": ["first", "second", ...], "why": "..." }     items in correct order
 //   { "type": "recall", "q": "...", "answer": "<p>model answer html</p>" }               self-graded
+//   { "type": "multi",  "q": "...", "options": ["...", ...], "answers": [0, 2], "why": "..." }  select all that apply; all-or-nothing
 // Options and items are shuffled on render, so position never gives the answer away.
 (function () {
   const shuffle = (a) => {
@@ -70,7 +71,30 @@
     card.append(label, ta, reveal);
   }
 
-  const kinds = { choice, order, recall };
+  function multi(q, card, done) {
+    const opts = shuffle(q.options.map((text, i) => ({ text, i })));
+    const list = el("div", "q-options");
+    const btns = opts.map(({ text }) => {
+      const b = el("button", "q-opt"); b.type = "button"; b.textContent = text; b.setAttribute("aria-pressed", "false");
+      b.onclick = () => b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true");
+      list.append(b); return b;
+    });
+    const check = el("button", "q-btn", "Check"); check.type = "button";
+    check.onclick = () => {
+      check.remove();
+      let right = true;
+      btns.forEach((b, k) => {
+        const should = q.answers.includes(opts[k].i), chose = b.getAttribute("aria-pressed") === "true";
+        b.disabled = true;
+        if (should) b.classList.add("is-right"); else if (chose) b.classList.add("is-wrong");
+        if (should !== chose) right = false;
+      });
+      done(right, q.why);
+    };
+    card.append(el("p", "q-hint", "Select every option that applies, then check. Any miss or extra counts as wrong."), list, check);
+  }
+
+  const kinds = { choice, order, recall, multi };
 
   document.querySelectorAll("section.quiz").forEach((root) => {
     const qs = JSON.parse(root.querySelector('script[type="application/json"]').textContent);
